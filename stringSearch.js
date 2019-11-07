@@ -1,3 +1,5 @@
+// You are attempting to find the index of the first appearance of one string (the needle) inside of another (the haystack). If the needle is not found in the haystack, the function should return -1.
+
 function indexOf(needle,haystack) {
   for(let h = 0; h < haystack.length; h++){
     for(let n = 0; n < needle.length; n++){

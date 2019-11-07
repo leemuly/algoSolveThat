@@ -1,3 +1,5 @@
+// Given an alphabetical array of dictionary entries and a word to search for, find that word's definition (if it exists). A dictionary entry is just a string where the word's name appears first, followed by - [definition].
+
 //BST solution
 function definitionOf(string, dictionary){
   let startLeft = 0

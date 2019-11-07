@@ -1,4 +1,5 @@
-// 1 represents land, 0 represents water
+// given an array of arrays, find the number of islands
+// where 1 represents land, 0 represents water
 // island is a block of land surrounded by water
 // horizontally or vertically adjacent
 //
