@@ -27,8 +27,8 @@ let numIslands = (map) => {
         islandChecker(row, col, map)
       }
     }
-    return count
   }
+  return count
 }
 //floodFill algo
 let islandChecker = (row, col, map) => {
