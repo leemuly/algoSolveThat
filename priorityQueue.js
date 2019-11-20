@@ -21,14 +21,11 @@ function PriorityQueue () {
 PriorityQueue.prototype.insert = function (data, priority){
   let newNode = new Node(data, priority);
 
-  if(!this.first) this.first = newNode;
-
-  if(this.first.priority < newNode.priority){
+  if(!this.first || this.first.priority < newNode.priority){
     newNode.next = this.first;
     this.first = newNode;
   } else {
     let current = this.first;
-    while(current){
       if(!current.next) {
         current.next = newNode
       } else if (newNode.priority > current.next.priority){
@@ -36,19 +33,18 @@ PriorityQueue.prototype.insert = function (data, priority){
         current.next = newNode;
       } else {
         current = current.next
-      }
     }
   }
 }
 
 PriorityQueue.prototype.peek = function () {
-  return this.first.priority;
+  return this.first.data;
 }
 
 PriorityQueue.prototype.popMax = function () {
   let max = this.first;
   this.first = this.first.next;
-  return max
+  return max.data
 }
 
 const pq = new PriorityQueue();
