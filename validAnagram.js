@@ -13,9 +13,7 @@ const validAnagram = (str1, str2) => {
   }
   for (const letter of str2){
     if(!letterFrequency[letter]) return false;
-
     letterFrequency[letter] -= 1;
-    if(letterFrequency[letter] < 0) return false;
   }
   return true;
 }

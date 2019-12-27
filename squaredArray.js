@@ -10,12 +10,8 @@ const same = (arr1, arr2) => {
   }
 
   for (const val of arr2){
-    if(frequencies[val]){
-      frequencies[val]--;
-      if(frequencies[val] < 0) return false;
-    } else {
-      return false;
-    }
+    if(!frequencies[val]) return false;
+    frequencies[val]--;
   }
   return true;
 }
