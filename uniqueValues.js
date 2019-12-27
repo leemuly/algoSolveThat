@@ -4,20 +4,18 @@ const uniqueValues = (arr) => {
   if(arr.length === 0) return 0;
   if(arr.length === 1) return 1;
 
-  let uniqueVals = 1;
   let holder = 0;
   let checker = 1;
 
   while(checker < arr.length){
     if(arr[checker] !== arr[holder]){
-      uniqueVals++;
-      holder = checker;
+      arr[++holder] = arr[checker];
     } else {
-      checker ++;
+      checker++;
     }
   }
 
-  return uniqueVals;
+  return holder+1;
 }
 
 console.log(uniqueValues([1, 1, 1, 1, 1, 2])); //2
