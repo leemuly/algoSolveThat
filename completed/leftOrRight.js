@@ -44,3 +44,43 @@ const solution = (arr) => {
   else return "";
 
 };
+
+
+// const solution = (arr) => {
+//     if(arr.length === 0 || arr.length === 1) return "";
+
+//     let level = 1;
+//     let levelNodes = Math.pow(2,level);
+//     let leftNodes = levelNodes/2;
+//     let leftTotal = 0;
+//     let rightTotal = 0;
+
+//     for(let i = 1; i < arr.length; i++){
+//             if(leftNodes > 0){
+//                 leftNodes--;
+//                 levelNodes--;
+//                 if(arr[i] > 0){
+//                     leftTotal += arr[i];
+//                 }
+//             } else {
+//                 levelNodes--;
+//                 if(arr[i] > 0){
+//                     rightTotal += arr[i];
+//                 }
+//             }
+
+//         if(levelNodes === 0){
+//             level++;
+//             levelNodes = Math.pow(2,level);
+//             leftNodes = levelNodes/2;
+//         }
+//     }
+
+//     if(leftTotal === rightTotal){
+//         return "";
+//     } else if (leftTotal > rightTotal){
+//         return "Left";
+//     } else {
+//         return "Right";
+//     }
+// };
