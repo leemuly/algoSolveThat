@@ -44,6 +44,6 @@ const reverseException = (str, exceptions) => {
 }
 
 // O(n+m) time where n is the str and m is the exceptions
-// O(1) space? the str arr is destroyed at the end of the fn and the max number of items in the hashmap is constant (26 letters in alphabet + 10 digits + special characters)
+// O(n) space? simplified from O(2n+1) 2n being the array and resulting string and the max number of items in the hashmap being constant (26 letters in alphabet + 10 digits + special characters)
 
 console.log(reverseException("abc#de", "#")) // edc#ba
