@@ -7,27 +7,16 @@
 function getMinimumDifference (str1, str2) {
   if(str1.length !== str2.length) return -1;
 
+  let str1Freq = {};
   let changeCount = 0;
-  let nonMatchingChars = [];
 
-  str1 = str1.split("").sort();
-  str2 = str2.split("").sort();
+  for(let i = 0; i < str1.length; i++){
+    str1Freq[str1[i]] = str1Freq[str1[i]] + 1 || 1;
+  }
 
-  for(let index = 0; index < str1.length; index++){
-    if(str1[index] !== str2[index]){
-      const matchCheck1 = nonMatchingChars.indexOf(str1[index]);
-      const matchCheck2 = nonMatchingChars.indexOf(str2[index]);
-
-      const matchingIndex = matchCheck1 > -1 || matchCheck2 > -1 || -1;
-
-      if(matchingIndex > -1) {
-          nonMatchingChars.splice(matchingIndex, 1);
-        } else {
-          nonMatchingChars.push(str1[index], str2[index]);
-          changeCount++;
-        }
-    }
-    else continue;
+  for(let i = 0; i < str2.length; i++){
+    if(str1Freq[str2[i]]) str1Freq[str2[i]] -= 1;
+    else changeCount++;
   }
 
   return changeCount;
